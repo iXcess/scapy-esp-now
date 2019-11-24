@@ -33,7 +33,7 @@ airmon-ng start <interface>
 ### Launching Scapy
 
 In Linux, make sure you are root before running scapy.
-![Scapy Interface](/images/scapy.jpg)
+![Scapy Interface](scapy.jpg)
 
 
 ## Contributing
