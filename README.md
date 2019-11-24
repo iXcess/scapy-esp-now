@@ -32,9 +32,22 @@ airmon-ng start <interface>
 
 ### Launching Scapy
 
-In Linux, make sure you are root before running scapy.
+In Linux, make sure you are root before running scapy. Below is the interface you will be greeted with.
+
 ![Scapy Interface](scapy.jpg)
 
+### Launching Scapy
+
+To look at all the commands, type
+```
+lsc()
+```
+However, the only few commands you will need is
+```
+1. rdpcap(<pcap_filename>)
+2. wrpcap(<pcap_filename>,packet)
+3. show()
+```
 
 ## Contributing
 
