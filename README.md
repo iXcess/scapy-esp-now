@@ -30,6 +30,10 @@ or if you have installed aircrack suite:
 airmon-ng start <interface>
 ```
 
+### Launching Scapy
+
+In Linux, make sure you are root before running scapy.
+![Scapy Interface](/images/scapy.jpg)
 
 
 ## Contributing
