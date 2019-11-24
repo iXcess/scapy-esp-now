@@ -9,13 +9,11 @@ Hardware required :
 
 Software required :
 1. Scapy
-
 ```
 pip install scapy
 ```
 
 Make sure that your WiFi card has entered monitor mode. It is possible to do this with some googling, I am going to show how to do that in Linux:
-
 ```
 ifconfig <interface> down
 
@@ -23,9 +21,7 @@ iwconfig <interface> mode monitor
 
 ifconfig <interface> up
 ```
-
 or if you have installed aircrack suite:
-
 ```
 airmon-ng start <interface>
 ```
@@ -36,18 +32,46 @@ In Linux, make sure you are root before running scapy. Below is the interface yo
 
 ![Scapy Interface](scapy.jpg)
 
-### Launching Scapy
+### Commands/Methods
 
 To look at all the commands, type
 ```
 lsc()
 ```
-However, the only few commands you will need is
+However, the only few commands/methods you will need is
 ```
 1. rdpcap(<pcap_filename>)
 2. wrpcap(<pcap_filename>,packet)
 3. show()
 ```
+### Pcap Manipulation
+
+To manipulate the data, first we have to understand the data available in the frame. So we will read the pcap and store it in a variable. After storing it, we can look at the content using the show() method.
+```
+pkt = rdpcap('espnow.pcap')
+pkt[0].show()
+```
+
+![Packet Data](packetData.jpg)
+
+Note that, to change any field in the packet, for example mac address and data:
+```
+pkt[0].addr2= aa:bb:cc:11:22:33
+pkt[0].load= '\hello world'
+```
+### Saving the pcap file
+
+To save the manipulated packet to be sent later, just write
+```
+wrpcap('espnow.pcap', pkt[0])
+```
+
+### Sending forged packet
+
+```
+sendp(pkt[0])
+```
+
 
 ## Contributing
 
