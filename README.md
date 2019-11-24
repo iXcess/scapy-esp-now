@@ -71,7 +71,7 @@ wrpcap('espnow.pcap', pkt[0])
 ```
 sendp(pkt[0])
 ```
-
+Voila, you have sent your first forged packet. Now you can trick an ESP device using a Raspberry Pi for example to talk using the ESP-Now protocol. Not the most efficient method but it works.
 
 ## Contributing
 
